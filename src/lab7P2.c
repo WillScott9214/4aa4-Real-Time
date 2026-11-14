@@ -171,7 +171,7 @@ int main(int argc, char *argv[])
 	// Force the program to run on one cpu,
 	CPU_ZERO(&cpus); //Initialize cpus to nothing clear previous info if any
 	CPU_SET(0, &cpus); // Set cpus to a cpu number zero here
-    if (pthread_mutexattr_setprotocol(&mutex_attr, PTHREAD_PRIO_INHERIT))
+    if (pthread_mutexattr_setprotocol(&mutex_attr, PTHREAD_PRIO_NONE))
     {perror("mutex init"); exit(1);}
     if (pthread_mutex_init(&mutex, &mutex_attr))
     {perror("mutex init"); exit(1);}
